@@ -10,14 +10,14 @@
         <table>
             <tr>
                 <td> <label for="uname" value=""><b>Nome de utilizador: </b></label></td>
-                <td><input type="text" name="user" required></td>
+                <td><input type="text" name="userName" required></td>
             <tr>
                 <td> <label for="uname" value=""><b>Primeiro e ultimo nome: </b></label></td> 
-                <td><input type="text" name="nome" required></td>
+                <td><input type="text" name="name" required></td>
             </tr>
             <tr>
                 <td> <label for="uname" value=""><b>Password: </b></label></td>
-                <td><input type="text" name="pass" required></td>
+                <td><input type="text" name="userPass" required></td>
             </tr>
             <tr>
                 <td> <label for="uname" value=""><b>Confirmar Password </b></label></td>
@@ -26,7 +26,7 @@
             
             <tr>
                 <td> <label for="uname" value=""><b>Email: </b></label></td>
-                <td><input type="text" name="mail" required></td>
+                <td><input type="text" name="userEmail" required></td>
             </tr>
             <tr>
                 <td><label for="psw" value =""><b>Data de Nascimento</b></label></td>

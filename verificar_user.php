@@ -8,7 +8,7 @@
         $mail=$_POST['userEmail'];
         $pass=$_POST['userPass'];
 
-        $query = $con->query ("select * from utilizadores where userEmail = '$mail' and userPass = '$pass'");
+        $query = $con->query ("select * from users where userEmail = '$mail' and userPass = '$pass'");
         $linhas=mysqli_num_rows($query);
 
         if($linhas >0)

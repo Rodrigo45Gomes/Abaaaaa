@@ -16,7 +16,7 @@
         if ($conn->connect_error) {
             die("connection failed: ". $conn-> connect_error);
         } else {
-            $add = "INSERT INTO utilizadores (user, nome, pass, mail, nasc, genero) VALUES (\"".$_POST["user"]."\",\"".($_POST
+            $add = "INSERT INTO users (userName, nome, userPass, userEmail, userNasc, genero) VALUES (\"".$_POST["user"]."\",\"".($_POST
             ["nome"])."\",\"".$_POST["pass"]."\",\"".$_POST["mail"]."\",\"".$_POST["nasc"]."\",\"".$_POST["genero"]."\")";
             if($conn->query($add)===TRUE){
                 echo"</br></br></br><h2 align=center>Dados registados com sucesso!<h2/>";
