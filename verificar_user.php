@@ -14,13 +14,13 @@
         if($linhas >0)
          { 
             echo "Login efetuado com sucesso";      
-            echo "<meta http-equiv=\"refresh\" content=\"2; url=http://localhost/Abaaaaa/fitflow_store.html\">";
+            echo "<meta http-equiv=\"refresh\" content=\"2; url=http://localhost/PAP/fitflow_store.html\">";
             
         }
         else
         {    
         echo"Email ou Password errado!";
-        echo "<meta http-equiv=\"refresh\" content=\"2; url=http://localhost/Abaaaaa/form_login.php\">";
+        echo "<meta http-equiv=\"refresh\" content=\"2; url=http://localhost/PAP/form_login.php\">";
         } 
     }
     $con->close();

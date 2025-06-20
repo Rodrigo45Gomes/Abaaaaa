@@ -20,7 +20,7 @@
             ["name"])."\",\"".$_POST["userPass"]."\",\"".$_POST["userEmail"]."\",\"".$_POST["nasc"]."\",\"".$_POST["genero"]."\")";
             if($conn->query($add)===TRUE){
                 echo"</br></br></br><h2 align=center>Dados registados com sucesso!<h2/>";
-                echo "<meta http-equiv=\"refresh\" content=\"2; url=lista.php\">";
+                echo "<meta http-equiv=\"refresh\" content=\"2; url=http://localhost/PAP/index.html\">";
             } else{
                 echo "Erro; Não foi possível inserir dados na tabela users ". $conn->error. "<p />";
 
