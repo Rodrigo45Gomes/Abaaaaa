@@ -1,71 +1,114 @@
 body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-        header {
-            background-color: #1e1e1e;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background-color: #333;
-            display: flex;
-            justify-content: center;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            display: inline-block;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #575757;
-        }
-        .banner {
-            background: url('https://images.unsplash.com/photo-1571019613911-ec2a7d3f36b1?auto=format&fit=crop&w=1350&q=80') no-repeat center center;
-            background-size: cover;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
-        }
-        .conteudo {
-            padding: 30px;
-            text-align: center;
-        }
-        .slogan{
-            color: black ;
-        }
-        
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #121212;
+    color: #f1f1f1;
+}
 
+header {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 3px solid #f72585;
+}
 
-        .produtos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .produto {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
-            width: 200px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .produto img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        footer {
-            background-color: #1e1e1e;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-        }
+header h1 {
+    color: #f72585;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+nav {
+    background-color: #272727;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: #f1f1f1;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f72585;
+}
+
+.banner {
+    background: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1600&q=80') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slogan {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 1.8em;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.conteudo {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.conteudo h2 {
+    color: #f72585;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.produto {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.produto:hover {
+    transform: scale(1.05);
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.produto h3 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.produto p {
+    color: #f72585;
+    font-size: 1.2em;
+}
+
+footer {
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #aaa;
+    margin-top: 40px;
+}
