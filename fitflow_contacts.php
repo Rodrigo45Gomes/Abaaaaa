@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -14,11 +17,16 @@
 </header>
 
 <nav>
-    <a href="fitflow_store.html">Início</a>
+    <a href="fitflow_store.php">Início</a>
     <a href="#">Produtos</a>
-    <a href="fitflow_info.html">Sobre</a>
-    <a href="fitflow_contacts.html">Contacto</a>
-    <a href="index.html">Sair</a>
+    <a href="fitflow_info.php">Sobre</a>
+    <a href="fitflow_contacts.php">Contacto</a>
+
+    <?php if (isset($_SESSION['user_id'])): ?>
+        <a href="logout.php" class="logout-btn">Logout</a>
+    <?php else: ?>
+        <a href="form_login.php" class="login-btn">Login</a>
+    <?php endif; ?>
 </nav>
 
 <div class="conteudo">

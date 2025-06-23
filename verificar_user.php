@@ -1,27 +1,34 @@
 
-    <?php
-    require_once 'ligacaoBD.php';
-    $con=ligaBD();
+<?php
+session_start();
+require_once 'ligacaoBD.php';
+$con = ligaBD();
 
-    if($con==TRUE){
-   
-        $mail=$_POST['mail'];
-        $pass=$_POST['pass'];
+if ($con) {
+    $mail = $_POST['mail'];
+    $pass = $_POST['pass'];
 
-        $query = $con->query ("select * from utilizadores where userEmail = '$mail' and userPass = '$pass'");
-        $linhas=mysqli_num_rows($query);
+    // Escapar inputs (versão básica)
+    $mail = mysqli_real_escape_string($con, $mail);
+    $pass = mysqli_real_escape_string($con, $pass);
 
-        if($linhas >0)
-         { 
-            echo "Login efetuado com sucesso";      
-            echo "<meta http-equiv=\"refresh\" content=\"2; url=http://localhost/PAP/fitflow_store.html\">";
-            
-        }
-        else
-        {    
-        echo"Email ou Password errado!";
-        echo "<meta http-equiv=\"refresh\" content=\"2; url=http://localhost/PAP/form_login.php\">";
-        } 
+    $query = "SELECT * FROM utilizadores WHERE userEmail = '$mail' AND userPass = '$pass'";
+    $result = mysqli_query($con, $query);
+
+    if (mysqli_num_rows($result) == 1) {
+        $user = mysqli_fetch_assoc($result);
+        $_SESSION['user_id'] = $user['userID'];
+        $_SESSION['user_email'] = $user['userEmail'];
+
+        header("Location: fitflow_store.php");
+        exit();
+        
+    } else {
+        header("Location: form_login.php?erro=1");
+        exit();
     }
-    $con->close();
-    ?>  
+
+    mysqli_close($con);
+} else {
+    echo "Erro na ligação à base de dados.";
+}

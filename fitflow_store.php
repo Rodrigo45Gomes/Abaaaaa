@@ -1,3 +1,14 @@
+<?php
+session_start();
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+if (isset($_SESSION['user_id'])): ?>
+        <a href="logout.php" class="logout-btn">Logout (<?= $_SESSION['user_email'] ?>)</a>
+    <?php else: ?>
+        <a href="form_login.php" class="login-btn">Login</a>
+    <?php endif; 
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -8,18 +19,30 @@
 </head>
 <body>
 
+<?php if (isset($_SESSION['user_name'])): ?>
+    <div class="user-box">
+        👋 Olá, <?php echo htmlspecialchars($_SESSION['user_email']); ?>
+    </div>
+<?php endif; ?>
+
 <header>
     <h1>FitFlow - Loja de Ginásio</h1>
     <p>Suplementos, Roupas Fitness e Acessórios</p>
 </header>
 
 <nav>
-    <a href="fitflow_store.html">Início</a>
+    <a href="fitflow_store.php">Início</a>
     <a href="#">Produtos</a>
-    <a href="fitflow_info.html">Sobre</a>
-    <a href="fitflow_contacts.html">Contacto</a>
-    <a href="index.html">Sair</a>
+    <a href="fitflow_info.php">Sobre</a>
+    <a href="fitflow_contacts.php">Contacto</a>
+
+    <?php if (isset($_SESSION['user_id'])): ?>
+        <a href="logout.php" class="logout-btn">Logout (<?= $_SESSION['user_email'] ?>)</a>
+    <?php else: ?>
+        <a href="form_login.php" class="login-btn">Login</a>
+    <?php endif; ?>
 </nav>
+
 
 <div class="banner">
     <div class="slogan">Transforma o teu corpo com os melhores produtos!</div>

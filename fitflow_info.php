@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Logout via POST
+if (isset($_POST['logout'])) {
+    session_destroy();
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -14,12 +24,24 @@
 </header>
 
 <nav>
-    <a href="fitflow_store.html">Início</a>
+    <a href="fitflow_store.php">Início</a>
     <a href="#">Produtos</a>
-    <a href="fitflow_info.html">Sobre</a>
-    <a href="fitflow_contacts.html">Contacto</a>
-    <a href="index.html">Sair</a>
+    <a href="fitflow_info.php">Sobre</a>
+    <a href="fitflow_contacts.php">Contacto</a>
+
+    <?php if (isset($_SESSION['user_id'])): ?>
+        <!-- Logout: faz post para esta mesma página para destruir sessão -->
+        <a href="#" class="logout-btn" onclick="document.getElementById('logoutForm').submit(); return false;">Logout</a>
+    <?php else: ?>
+        <!-- Login: redireciona para index.html -->
+        <a href="index.html" class="login-btn">Login</a>
+    <?php endif; ?>
 </nav>
+
+<!-- Formulário invisível para logout -->
+<form id="logoutForm" method="post" style="display:none;">
+    <input type="hidden" name="logout" value="1">
+</form>
 
 <div class="conteudo">
     <h2>A nossa missão</h2>

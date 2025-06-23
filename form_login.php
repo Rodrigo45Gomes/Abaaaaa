@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -5,12 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitFlow - Login</title>
     <link rel="stylesheet" href="style/fitflow_sign_in.css">
-    
 </head>
 <body>
 
 <div class="login-box">
     <h2>Login - FitFlow</h2>
+
+    <?php if (isset($_GET['erro']) && $_GET['erro'] == 1): ?>
+        <p style="color: red;">Email ou password incorretos!</p>
+    <?php endif; ?>
+
     <form action="verificar_user.php" method="post">
         <table>
             <tr>
