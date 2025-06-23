@@ -8,6 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitFlow - Login</title>
     <link rel="stylesheet" href="style/fitflow_sign_in.css">
+    <link rel="icon" type="image/png" href="imagens/Logo_FitFlow.png">
 </head>
 <body>
 

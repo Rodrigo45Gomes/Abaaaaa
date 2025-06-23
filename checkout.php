@@ -1,10 +1,15 @@
 <?php
 session_start();
-$_SESSION['cart'] = []; // esvaziar carrinho
+$_SESSION['cart'] = [];
 ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <meta charset="UTF-8">
+    <title>Carrinho - FitFlow</title>
+    <link rel="stylesheet" href="style/style_store.css">
+     <link rel="icon" type="image/png" href="imagens/Logo_FitFlow.png">
+</head>
     <meta charset="UTF-8">
     <title>Compra Finalizada</title>
 </head>

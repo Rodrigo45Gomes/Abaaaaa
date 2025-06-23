@@ -8,6 +8,6 @@ if (isset($_POST['index'])) {
         $_SESSION['cart'] = array_values($_SESSION['cart']);
     }
 }
-header("Location: cart.php");
+header("Location: carrinho.php");
 exit;
 ?>

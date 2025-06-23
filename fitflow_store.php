@@ -8,6 +8,7 @@ session_start();
     <title>FitFlow</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style_store.css">
+    <link rel="icon" type="image/png" href="imagens/Logo_FitFlow.png">
 </head>
 <body>
 
@@ -33,6 +34,8 @@ session_start();
     <?php else: ?>
         <a href="form_login.php" class="login-btn">Login</a>
     <?php endif; ?>
+    <a href="carrinho.php">Carrinho (<?= isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?>)</a>
+
 </nav>
 
 

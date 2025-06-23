@@ -5,13 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registo - FitFlow</title>
     <link rel="stylesheet" href="style/fitflow_sign_up.css">
+    <link rel="icon" type="image/png" href="imagens/Logo_FitFlow.png">
     <script>
         function validarSenhas(event) {
             const senha = document.getElementsByName("userPass")[0].value;
             const confirmar = document.getElementsByName("pass_confirmar")[0].value;
+            const email = document.getElementsByName("userEmail")[0].value;
 
+            let erros = [];
+
+            // Validação de senha
             if (senha !== confirmar) {
-                alert("Insira senhas iguais!");
+                erros.push("As senhas não coincidem.");
+            }
+            if (senha.length < 10) {
+                erros.push("A senha deve ter pelo menos 10 caracteres.");
+            }
+            if (!/[A-Z]/.test(senha)) {
+                erros.push("A senha deve conter pelo menos uma letra maiúscula.");
+            }
+
+            // Validação de email com regex
+            const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailValido.test(email)) {
+                erros.push("Insere um email válido (ex: exemplo@dominio.com).");
+            }
+
+            // Mostrar erros se existirem
+            if (erros.length > 0) {
+                alert(erros.join("\n"));
                 event.preventDefault();
             }
         }
@@ -64,5 +86,6 @@
 
 </body>
 </html>
+
 
 

@@ -5,6 +5,7 @@
     <title>Bem-vindo à FitFlow</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" type="image/png" href="imagens/Logo_FitFlow.png">
 </head>
 <body>
 
