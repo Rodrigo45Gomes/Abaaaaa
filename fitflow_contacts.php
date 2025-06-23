@@ -11,6 +11,12 @@ session_start();
 </head>
 <body>
 
+<?php if (isset($_SESSION['user_name'])): ?>
+    <div class="user-box">
+        👋 Olá, <?php echo htmlspecialchars($_SESSION['user_email']); ?>
+    </div>
+<?php endif; ?>
+
 <header>
     <h1>Contacta o FitFlow</h1>
     <p>Estamos aqui para te ajudar</p>
@@ -22,8 +28,8 @@ session_start();
     <a href="fitflow_info.php">Sobre</a>
     <a href="fitflow_contacts.php">Contacto</a>
 
-    <?php if (isset($_SESSION['user_id'])): ?>
-        <a href="logout.php" class="logout-btn">Logout</a>
+    <?php if (isset($_SESSION['user_email'])): ?>
+        <a href="logout.php" class="logout-btn">Logout (<?= $_SESSION['user_email'] ?>)</a>
     <?php else: ?>
         <a href="form_login.php" class="login-btn">Login</a>
     <?php endif; ?>

@@ -1,12 +1,5 @@
 <?php
 session_start();
-
-// Logout via POST
-if (isset($_POST['logout'])) {
-    session_destroy();
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
-}
 ?>
 <!DOCTYPE html>
 <html lang="pt">
@@ -17,6 +10,12 @@ if (isset($_POST['logout'])) {
     <link rel="stylesheet" href="style/style_store.css">
 </head>
 <body>
+
+<?php if (isset($_SESSION['user_name'])): ?>
+    <div class="user-box">
+        👋 Olá, <?php echo htmlspecialchars($_SESSION['user_email']); ?>
+    </div>
+<?php endif; ?>
 
 <header>
     <h1>Sobre o FitFlow</h1>
@@ -29,23 +28,16 @@ if (isset($_POST['logout'])) {
     <a href="fitflow_info.php">Sobre</a>
     <a href="fitflow_contacts.php">Contacto</a>
 
-    <?php if (isset($_SESSION['user_id'])): ?>
-        <!-- Logout: faz post para esta mesma página para destruir sessão -->
-        <a href="#" class="logout-btn" onclick="document.getElementById('logoutForm').submit(); return false;">Logout</a>
+    <?php if (isset($_SESSION['user_email'])): ?>
+        <a href="logout.php" class="logout-btn">Logout (<?= $_SESSION['user_email'] ?>)</a>
     <?php else: ?>
-        <!-- Login: redireciona para index.html -->
-        <a href="index.html" class="login-btn">Login</a>
+        <a href="form_login.php" class="login-btn">Login</a>
     <?php endif; ?>
 </nav>
 
-<!-- Formulário invisível para logout -->
-<form id="logoutForm" method="post" style="display:none;">
-    <input type="hidden" name="logout" value="1">
-</form>
-
 <div class="conteudo">
     <h2>A nossa missão</h2>
-    <p>O FitFlow nasceu com o objetivo de fornecer produtos de qualidade para todos os entusiastas de fitness, desde iniciantes até atletas experientes. Queremos ajudar-te a alcançar os teus objetivos com suplementos confiáveis, acessórios úteis e roupa confortável para o treino.</p>
+    <p>O FitFlow nasceu com o objetivo de fornecer produtos de qualidade para todos os entusiastas de fitness, desde iniciantes até atletas experientes...</p>
 
     <h2>O que oferecemos</h2>
     <ul>
@@ -56,7 +48,7 @@ if (isset($_POST['logout'])) {
     </ul>
 
     <h2>Porquê escolher o FitFlow?</h2>
-    <p>Trabalhamos com marcas de renome, garantimos entregas rápidas e oferecemos suporte ao cliente com atenção e responsabilidade. O nosso compromisso é com o teu progresso físico e bem-estar.</p>
+    <p>Trabalhamos com marcas de renome, garantimos entregas rápidas e oferecemos suporte ao cliente com atenção e responsabilidade...</p>
 </div>
 
 <footer>
