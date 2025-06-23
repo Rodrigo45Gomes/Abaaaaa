@@ -16,7 +16,7 @@ $_SESSION['cart'] = [];
 <body>
     <h1>Obrigado pela tua compra! 🎉</h1>
     <p>Receberás um email com os detalhes em breve.</p>
-    <a href="fitflow_store.php">Voltar à loja</a>
+    <a href="fitflow_store.php">Comprar mais</a>
 </body>
 </html>
 

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    <link rel="icon" type="image/png" href="imagens/Logo_FitFlow.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registo - FitFlow</title>
     <link rel="stylesheet" href="style/fitflow_sign_up.css">
-    <link rel="icon" type="image/png" href="imagens/Logo_FitFlow.png">
+
+    
     <script>
         function validarSenhas(event) {
             const senha = document.getElementsByName("userPass")[0].value;
@@ -80,6 +82,7 @@
                 </td>
             </tr>
         </table>
+        <button><a href="login_choice.php">Voltar</a></button>
         <button type="submit">Adicionar</button>
     </form>
 </div>

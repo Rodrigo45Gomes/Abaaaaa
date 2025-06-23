@@ -32,7 +32,7 @@ session_start();
     <?php if (isset($_SESSION['user_email'])): ?>
         <a href="logout.php" class="logout-btn">Logout (<?= $_SESSION['user_email'] ?>)</a>
     <?php else: ?>
-        <a href="form_login.php" class="login-btn">Login</a>
+        <a href="login_choice.php" class="login-btn">Login</a>
     <?php endif; ?>
     <a href="carrinho.php">Carrinho (<?= isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?>)</a>
 
