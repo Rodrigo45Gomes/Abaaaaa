@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: form_login.php");
+header("Location: fitflow_store.php");
 exit();
 ?>

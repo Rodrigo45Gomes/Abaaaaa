@@ -11,7 +11,7 @@ session_start();
 </head>
 <body>
 
-<?php if (isset($_SESSION['user_name'])): ?>
+<?php if (isset($_SESSION['user_email'])): ?>
     <div class="user-box">
         👋 Olá, <?php echo htmlspecialchars($_SESSION['user_email']); ?>
     </div>
@@ -24,7 +24,7 @@ session_start();
 
 <nav>
     <a href="fitflow_store.php">Início</a>
-    <a href="#">Produtos</a>
+    <a href="fitflow_products.php">Produtos</a>
     <a href="fitflow_info.php">Sobre</a>
     <a href="fitflow_contacts.php">Contacto</a>
 
